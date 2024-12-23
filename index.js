@@ -36,7 +36,7 @@ async function startServer() {
     server.applyMiddleware({ app });
   
     // Connect to MongoDB and start the server
-    mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+    mongoose.connect(MONGO_URI)
       .then(() => {
         app.listen(PORT, () => {
           console.log(`Server running on http://localhost:${PORT}${server.graphqlPath}`);
